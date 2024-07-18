@@ -287,6 +287,8 @@ body{
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: auto;
+
 }
 
 .display-text{
@@ -413,11 +415,16 @@ body{
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 #sky{
   background-image: linear-gradient(to top right, skyblue, rgb(223, 207, 177));
-  flex: 2;
+  flex: 1.5;
+  width: 100.5vw;
+
 }
 
 .rice-plant-count {
@@ -425,6 +432,7 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .farmer-count{
@@ -432,6 +440,7 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .popo-count {
@@ -439,6 +448,7 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .hut-count{
@@ -446,6 +456,7 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .house-count{
@@ -453,6 +464,8 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
+  
 }
 
 .factory-count{
@@ -460,6 +473,8 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
+  
 }
 
 .temple-count{
@@ -467,6 +482,8 @@ body{
   flex: 1;
   display: flex;
   flex-direction: row;
+  width: 100vw;
+ 
 }
 
 .click_effect{
