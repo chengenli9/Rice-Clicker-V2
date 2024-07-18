@@ -287,7 +287,7 @@ function updateDisplay() {
     goldChopstxBtn.style.display = 'flex';
   }
 
-  if (!UPGRADE_VALUES['riceCooker'].purchased && gameData.grainCount >= 1) {
+  if (!UPGRADE_VALUES['riceCooker'].purchased && gameData.grainCount >= 10000) {
     riceCookerBtn.style.visibility = 'visible';
     riceCookerBtn.style.display = 'flex';
   }
