@@ -1,0 +1,508 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow: hidden;
+  text-align: center;
+  height: 100vh;
+  background-color: rgb(2, 21, 19);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  transition: margin 0.5s ease-out;
+}
+
+.screen.up{
+  margin-top: -100vh;
+}
+
+#screen1 {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  transition: margin 0.5s ease-out;
+}
+
+.menu-btn{
+  width: 40px;
+  margin-right: auto;
+  float: left;
+  font-size: 25px;
+  color: rgb(0, 89, 58);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn:hover{
+ opacity: 0.5;
+ color: rgb(0, 89, 58);
+}
+
+.sideNav .closebtn {
+  text-decoration: none;
+  font-size: none;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.reset-btn{
+  width: 200px;
+  background-color: transparent;
+  font: 25px Arial;
+  color: white;
+  border: none;
+}
+
+.reset-btn:hover{
+  opacity: 0.5;
+}
+
+.sideNav a:hover {
+  color: #f1f1f1;
+}
+
+.sideNav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 89, 58);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sideNav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sideNav .closebtn:hover{
+  opacity: 0.5;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sideNav {padding-top: 15px;}
+  .sideNav a {font-size: 18px;}
+}
+
+
+.title {
+  font: 7vh Arial;
+  font-weight: bold;
+  text-shadow: wheat 0 0 10px;
+}
+
+.btn {
+  height: 60px;
+  width: 400px;
+  margin-top: 10px;
+  padding: 0px 10px 0px 10px;
+  border: 5px solid white;
+  background-color: transparent;
+  font: 20px Arial;
+  font-weight: bold;
+  color: white;
+}
+
+.btn:hover {
+  border: 5px solid rgb(0, 89, 58);
+  color: rgb(0, 89, 58);
+}
+
+.input-name {
+  height: 50px;
+  font: 20px Arial black;
+  margin-top: 80px;
+  padding: 5px;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-img{
+  margin: 20px;
+  width: 8vw;
+  height: auto;
+  min-width: 150px;
+  min-height: 150px;
+  filter: drop-shadow(0px 0px 10px rgb(96, 90, 90));
+  transition: 0.1s;
+}
+
+.title-img:hover{
+  transform: scale(0.95);
+}
+
+.title-img:active{
+  transform: scale(0.9);
+}
+
+
+#game-container {
+  width: 92vw;
+  height: 90vh;
+  background-color: rgb(2, 30, 27);
+  display: flex;
+  flex-direction: row;
+  padding: 1vh;
+  transition: margin-left .5s;
+  
+}
+
+.store {
+  flex: 1;
+  width: 100%;
+  background-color: rgb(0, 89, 58);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+
+.upgrades{
+  flex: 1;
+  background-color: rgb(2, 30, 27);
+  border: 0.2vh solid rgb(0, 89, 58); 
+  box-shadow: 0 0 1vh black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+
+
+
+.upgrades:active {
+  transform: scale(0.95);
+}
+
+.upgrade-cost{
+  background-color: transparent;
+  width: 100%;
+  height: 4.7vh;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gold;
+  font: 1vw Sans-serif;
+}
+
+.upgrade-name {
+  margin-top: 5px;
+  color: white;
+  opacity: 0.8;
+
+  font-weight: bold;
+  font: 1vw Arial;
+}
+
+.upgrades .upgrade-name {
+  max-width: 100%; /* Ensure the text does not overflow the container */
+  overflow-wrap: break-word; /* Break long words */
+}
+
+
+.upgrade-img {
+  height: 6vh;
+  width: 6vh;
+  margin-top: 0.8vh;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.upgrade-info {
+  visibility: hidden;
+  background-color: black;
+  font-size: 1.2vw;
+  color: white;
+  text-align: center;
+  padding: 3px 25px;
+  opacity: 0.9;
+  position: absolute;
+ 
+}
+
+.upgrades:hover .upgrade-info{
+  visibility: visible;
+}
+
+.upgrades-display {
+  padding: 0.5vh;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stats {
+  color: white;
+  opacity: 0.5;
+  font-size: 0.8vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0.9vh;
+}
+
+#display {
+  background-color: wheat;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-text{
+  text-align: left;
+  padding: 0.5vh;
+  font: 3vh Arial;
+  text-shadow: white 0px 0 5px;
+  color: wheat;
+  background-color: rgb(0, 89, 58);
+}
+
+
+#bank {
+  background-color: #f5deb3;
+  width: 25vw;
+  min-width: 200px;
+  margin-right: 0.8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: url('images/chopsticks-cursor.png'), auto;
+}
+
+#rice-btn-img {
+  width: 10vw;
+  height: auto;
+  min-width: 150px;
+  min-height: 150px;
+  filter: drop-shadow(0px 0px 10px rgb(96, 90, 90));
+  cursor: url('images/chopsticks-cursor.png'), auto;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#rice-cooker-btn, #gold-chopsticks-btn, #gold-rc-btn {
+  visibility: hidden;
+  background-color: rgb(33, 28, 0);
+  display: none;
+}
+
+#rice-btn {
+  width: 10vw;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  transition: 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+#rice-btn:active{
+  transform: scale(0.9);
+}
+
+
+
+.income-display {
+  padding: 5px;
+  font: 2.5vh Arial;
+  text-shadow: white 1px 0 15px;
+  color: rgb(2, 30, 27);
+  margin-top: 30px;
+}
+
+.items-text {
+  color: black;
+  font: 25px Arial;
+  margin-bottom: 10px;
+}
+
+#items-display {
+  margin: auto;
+}
+
+
+.progress-btns {
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+  border: solid rgb(2, 21, 19);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.progress-btns:active {
+  transform: scale(0.9);
+}
+
+.progress-btns-img {
+  width: 25px;
+  height: 25px;
+}
+
+
+#grain-count {
+  padding: 5px;
+  font-size: 3vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+  margin: auto;
+}
+
+
+
+#per-click {
+  font: 30px Arial;
+  color: black;
+  margin: 1.6vh;
+  display: none;
+}
+
+
+#field{
+  background-color: green;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#sky{
+  background-image: linear-gradient(to top right, skyblue, rgb(223, 207, 177));
+  flex: 2;
+}
+
+.rice-plant-count {
+  background-color: rgb(27, 135, 15);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.farmer-count{
+  background-color: rgb(21, 112, 11);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.popo-count {
+  background-color: rgb(18, 95, 9);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.hut-count{
+  background-color: rgb(16, 83, 9);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.house-count{
+  background-color: rgb(14, 74, 7);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.factory-count{
+  background-color: rgb(12, 62, 6);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.temple-count{
+  background-color: rgb(10, 54, 6);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.click_effect{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+  text-shadow: black 1px 0 10px;
+  pointer-events: none;
+  margin-top: -40px;
+  margin-left: -40px;
+  border-radius: 100%;
+  animation-name: click_animation;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+
+
+@keyframes click_animation {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+}
+
